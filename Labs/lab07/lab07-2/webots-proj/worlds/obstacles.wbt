@@ -1,0 +1,120 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  basicTimeStep 16
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.5441571034132583 0.8018891523934346 0.24671204688590198 5.13385
+  position -1.0345827123464397 0.8931516244202666 0.6601432636153824
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 1 1
+}
+WoodenBox {
+  translation -0.2 0.05 0.15418
+  rotation 0 -1 0 0.3468
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+WoodenBox {
+  translation -0.216038 0.05 -0.227971
+  rotation 0 -1 0 0.3468
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+WoodenBox {
+  translation 0.2296 0.05 -0.2316
+  rotation 0 -1 0 0.34688418883387256
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+DEF WALL_1 Solid {
+  translation 0.5 0.05 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.98
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE WALL_SHAPE
+}
+DEF z1234567 E-puck {
+  rotation 0 1 0 3.141592653589793
+  controller "void"
+  camera_width 320
+  camera_height 240
+  turretSlot [
+    DistanceSensor {
+      translation -0.03 0.005 0
+      rotation 0 1 0 3.141592653589793
+      name "dsL"
+      lookupTable [
+        0 0 0
+        0.05 500 0.1
+        0.1 1000 0.15
+      ]
+    }
+    DistanceSensor {
+      translation 0 0.005 -0.03
+      rotation 0 1 0 1.5708003061004252
+      name "dsF"
+      lookupTable [
+        0 0 0
+        0.05 500 0.1
+        0.1 1000 0.15
+      ]
+    }
+    DistanceSensor {
+      translation 0.03 0.005 0
+      name "dsR"
+      lookupTable [
+        0 0 0
+        0.05 500 0.1
+        0.1 1000 0.15
+      ]
+    }
+    InertialUnit {
+      name "IMU"
+      noise 0.02
+    }
+  ]
+}
+DEF WALL_2 Solid {
+  translation -0.5 0.05 0
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(2)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_3 Solid {
+  translation 0 0.05 -0.5
+  rotation 0 1 0 1.5708
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(3)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_4 Solid {
+  translation 0 0.05 0.5
+  rotation 0 1 0 1.5708
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(4)"
+  boundingObject USE WALL_SHAPE
+}

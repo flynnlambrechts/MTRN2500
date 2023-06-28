@@ -1,0 +1,10 @@
+user vector for heap
+Use fill for constructors for array as well
+
+Questions:
+What is the difference with the const funcitons?
+Should we us .at() for arrays
+Where do we put helper functions
+
+Things that need work:
+Combining Add and subtract into one 

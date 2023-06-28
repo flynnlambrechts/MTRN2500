@@ -1,0 +1,11 @@
+apple
+banana
+grape
+orange
+lychee
+durian
+mango
+coconut
+cabbage
+lettuce
+carrot
